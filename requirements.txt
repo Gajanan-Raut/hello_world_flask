@@ -1,1 +1,13 @@
-flask
+Flask>=2.0
+PyPDF2>=3.0
+pikepdf
+PyMuPDF
+pdf2docx
+pdf2image
+pillow
+python-pptx
+pdf2pptx==1.0.5
+# pdf2pptx==0.0.7  # optional / custom wrappers
+camelot-py[cv]  # optional, needs ghostscript
+pytesseract  # optional for OCR (requires tesseract installed on system)
+

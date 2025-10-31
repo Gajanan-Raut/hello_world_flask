@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <title>Hello Flask</title>
@@ -8,5 +8,60 @@
     <p>Welcome to your first Flask app!</p>
     <a href="/about">Learn more about Flask</a>
     
+</body>
+</html> -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Flask PDF Tools</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <h1 class="mb-4">Flask PDF Tools — demo</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card p-3 mb-3">
+          <h5>Upload a file</h5>
+          <input id="fileInput" type="file" class="form-control mb-2">
+          <button id="uploadBtn" class="btn btn-primary">Upload</button>
+          <div id="uploadResult" class="mt-2 small text-muted"></div>
+        </div>
+
+        <div class="card p-3 mb-3">
+          <h5>Actions</h5>
+          <button class="btn btn-outline-secondary mb-2" onclick="doAction('merge')">Merge PDFs (select multiple)</button>
+          <button class="btn btn-outline-secondary mb-2" onclick="doAction('split')">Split (returns first page)</button>
+          <button class="btn btn-outline-secondary mb-2" onclick="doAction('compress')">Compress</button>
+          <button class="btn btn-outline-secondary mb-2" onclick="doAction('pdf2docx')">PDF → DOCX</button>
+          <button class="btn btn-outline-secondary mb-2" onclick="doAction('pdf2pptx')">PDF → PPTX</button>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card p-3 mb-3">
+          <h5>Smaller utilities</h5>
+          <button class="btn btn-sm btn-outline-info mb-2" onclick="doAction('pdf2jpg')">PDF → JPG</button>
+          <button class="btn btn-sm btn-outline-info mb-2" onclick="doAction('jpg2pdf')">JPG → PDF</button>
+          <button class="btn btn-sm btn-outline-info mb-2" onclick="doAction('watermark')">Add watermark</button>
+          <button class="btn btn-sm btn-outline-info mb-2" onclick="doAction('rotate')">Rotate 90°</button>
+        </div>
+
+        <div class="card p-3 mb-3">
+          <h5>Advanced</h5>
+          <button class="btn btn-sm btn-outline-danger mb-2" onclick="doAction('protect')">Protect (add password)</button>
+          <button class="btn btn-sm btn-outline-danger mb-2" onclick="doAction('unlock')">Unlock (remove password)</button>
+          <button class="btn btn-sm btn-outline-warning mb-2" onclick="doAction('ocr')">OCR (extract text)</button>
+          <button class="btn btn-sm btn-outline-warning mb-2" onclick="doAction('pdf2excel')">PDF → Excel (tables)</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="resultArea" class="mt-4"></div>
+  </div>
+  <script src="/static/main.js"></script>
 </body>
 </html>
